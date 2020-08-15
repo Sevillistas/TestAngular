@@ -1,0 +1,5 @@
+<ng-container *ngIf="repositoryService.getAllRepos().length; else letsGetItStarted">
+    <app-repository-list-item *ngFor="let repo of pagerService.getPagedItems()" [repo]="repo"></app-repository-list-item>
+</ng-container>
+<ng-template #letsGetItStarted>Введите имя пользователя Github, чтобы получить список его репозиториев</ng-template>
+<div class="error" *ngIf="repositoryService.errorFound">{{ repositoryService.errorMessage }}</div>

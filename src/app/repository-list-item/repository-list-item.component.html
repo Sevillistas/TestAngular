@@ -1,0 +1,28 @@
+<div class="listItem">
+    <div class="listItem__header">
+        <div class="listItem__name">
+            {{ repo.node.name }}
+        </div>
+        <a [routerLink]="['', repo.node.name]"
+        [queryParams]="{name: repo.node.name, owner: repo.node.owner.login}"
+        >
+            <span>
+                <app-arrow></app-arrow>
+            </span>
+        </a>
+    </div>
+    <div class="listItem__content">
+        <div class="listItem__group">
+            <div class="listItem__label">Основной язык</div>
+            <div class="listItem__value">
+                {{ repo.node.primaryLanguage ? repo.node.primaryLanguage.name : "Не определён" }}
+            </div>
+        </div>
+        <div class="listItem__group">
+            <div class="listItem__label">Дата создания</div>
+            <div class="listItem__value">
+                {{ repo.node.createdAt | date:"longDate"}}
+            </div>
+        </div>
+    </div>
+</div>

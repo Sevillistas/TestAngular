@@ -1,0 +1,30 @@
+<ng-container>
+    <div class="filterForm__header">
+        Фильтры
+    </div>
+    <div class="wrapper">
+        <div class="filterForm__label" [ngClass]="{visible: labelIsVisible}" >Имя пользователя</div>
+        <input type="text" class="filterForm__input" placeholder="Имя пользователя" [value]="repositoryService.getUserName()"
+        (keyup.enter)="findReposByLogin($event.target.value)" (keyup)="setLogin($event.target.value)"
+        [ngClass]="{notEmpty:inputIsNotEmpty}"/>
+    </div>
+    <div class="filterForm__checkbox-container" [hidden]="!getVisibilityCheckbox()">
+        <div class="filterForm__checkbox__label">Языки программирования</div>
+        <div class="filterForm__checkbox__optionalInfo" [hidden]="!getCountOfChosenLanguages()">Выбраны {{getCountOfChosenLanguages()}}</div>
+        <div class="filterForm__checkbox" [ngClass]="{
+            chosenAnyLanguage: getAnyLanguageChosen()
+        }">
+            <ul>
+                <app-checkbox-item *ngFor="let item of repositoryService.getLanguages()" [item]="item"></app-checkbox-item>
+            </ul>
+        </div>
+    </div>
+    <div class="filterForm__radio-container" [hidden]="!getVisibilityRadio()">
+        <div class="filterForm__radio__header">Дата создания</div>
+        <div class="filterForm__radio">
+            <ul>
+                <app-radio-item *ngFor="let item of repositoryService.getDates()" [item]="item"></app-radio-item>
+            </ul>
+        </div>
+    </div>
+</ng-container>

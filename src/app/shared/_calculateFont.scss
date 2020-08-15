@@ -1,0 +1,13 @@
+@function calcFluidFontSize($font-min, $font-max, $viewport-min, $viewport-max) {
+    $k: ($font-max - $font-min)/($viewport-max - $viewport-min);
+    $b: $font-min - $k * $viewport-min;
+  
+    
+    $b: $b * 1px;
+  
+    @return calc( #{$k} * 100vw + #{$b} );
+}
+
+$fontMax20: calcFluidFontSize(12, 20, 768, 1920);
+
+$fontMax16: calcFluidFontSize(9, 16, 768, 1920);

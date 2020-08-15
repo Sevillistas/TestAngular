@@ -1,0 +1,26 @@
+<div *ngIf="repo" class="card">
+    <h1 class="card__header">{{repo.name}}</h1>
+    <div class="card__container">
+        <div class="card__item">
+            <div class="card__label">Дата создания</div>
+            <div class="card__text">{{repo.createdAt | date:'longDate' }}</div>
+        </div>
+        <div class="card__item">
+            <div class="card__label">Основной язык</div>
+            <div class="card__text">{{repo.primaryLanguage.name}}</div>
+        </div>
+        <div class="card__item">
+            <div class="card__label">Языки</div>
+            <div class="card__text">{{languages}}</div>
+        </div>
+        <div class="card__item">
+            <div class="card__label">Количество форков</div>
+            <div class="card__text">{{repo.forkCount}}</div>
+        </div>
+    </div>
+    <div class="card__item-vertical">
+        <div class="card__label">Описание</div>
+        <div class="card__text">{{repo.description}}</div>
+    </div>
+</div>
+<h2 *ngIf="!repo">Красивый несогласованный loader</h2>

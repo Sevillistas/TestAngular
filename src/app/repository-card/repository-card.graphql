@@ -1,0 +1,20 @@
+query repositoryDetails($name: String!, $owner: String!){ 
+    repository(name: $name, owner: $owner){
+        name
+        description
+        createdAt
+        primaryLanguage {
+            name
+        }
+        homepageUrl
+        url
+        forkCount
+        languages(first: 3){
+        edges {
+          node {
+            name
+		    }
+		  }
+		}
+  } 
+}

@@ -1,0 +1,18 @@
+query repositoriesByAuthor($login: String!, $count: Int!){ 
+	repositoryOwner(login: $login) {
+		repositories(first: $count){
+            edges{
+                node{
+                    name
+                    createdAt
+                    primaryLanguage {
+                        name
+                    }
+                    owner {
+                      login
+                    }
+                }
+            }
+        }
+	}
+}

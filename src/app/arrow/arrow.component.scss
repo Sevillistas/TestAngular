@@ -1,0 +1,9 @@
+:host{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.turned{
+    transform: rotate(180deg);
+}

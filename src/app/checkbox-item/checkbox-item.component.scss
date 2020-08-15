@@ -1,0 +1,20 @@
+:host li{
+    margin-bottom: 16px;
+}
+
+:host:last-child li{
+    margin-bottom: 0px;
+}
+
+li{
+    display: flex;
+    align-items: center;
+}
+
+.filterForm{
+    &__checkbox{
+        &__isChecked{
+            margin-right: 13px;
+        }
+    }
+}

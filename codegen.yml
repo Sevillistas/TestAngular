@@ -1,0 +1,14 @@
+schema:
+  - https://api.github.com/graphql:
+      headers:
+        Authorization: token dd481fda15a38339590a306cac03889122b3387f
+
+documents:
+  - src/**/*.graphql
+
+generates:
+  ./src/app/services/github.service.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-apollo-angular

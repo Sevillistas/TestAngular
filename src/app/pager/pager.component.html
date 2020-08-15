@@ -1,0 +1,13 @@
+<ng-container *ngIf="pagerService.getTotalPages()>0">
+    <div class="pager__toLeft" (click)="previousPage()">
+        <svg class="arrow__left" xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
+            <path [ngClass]="{locked: pagerService.getCurrentPage() === pagerService.getStartBorder()}" fill-rule="evenodd" clip-rule="evenodd" d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z" fill="#347CFF"/>
+        </svg>
+    </div>
+    <div class="pager__current">{{ pagerService.getCurrentPage() }}</div>
+    <div class="pager__toRight" (click)="nextPage()">
+        <svg class="arrow__right" xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
+            <path [ngClass]="{locked: pagerService.getCurrentPage() === pagerService.getEndBorder()}" fill-rule="evenodd" clip-rule="evenodd" d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z" fill="#347CFF"/>
+        </svg>
+    </div>
+</ng-container>

@@ -1,0 +1,63 @@
+@function calcFluidFontSize($font-min, $font-max, $viewport-min, $viewport-max) {
+    $k: ($font-max - $font-min)/($viewport-max - $viewport-min);
+    $b: $font-min - $k * $viewport-min;
+  
+    $b: $b * 1px;
+  
+    @return calc( #{$k} * 100vw + #{$b} );
+}
+
+$fontMax20: calcFluidFontSize(12, 20, 768, 1920);
+
+$fontMax16: calcFluidFontSize(9, 16, 768, 1920);
+
+.listItem{
+    height: 106px;
+    &__name{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        //font-size: 20px;
+        font-size: $fontMax20;
+        line-height: 23px;
+        margin-right: 23px;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        margin-bottom: 29px;
+    }
+    &__content{
+        display: flex;
+        margin-bottom: 29px;
+        align-items: center;
+    }
+    &__group{
+        display: flex;
+        align-items: center;
+        //width: 425px;
+        width: 100%;
+        max-width: 425px;
+    }
+    &__label{
+        margin-right: 104px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        //font-size: 16px;
+        font-size: $fontMax16;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    &__value{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        //font-size: 16px;
+        font-size: $fontMax16;
+        line-height: 24px;
+        color: #2962FF;
+    }
+    border-bottom: 1px solid #A5A5A5;
+}

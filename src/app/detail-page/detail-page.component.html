@@ -1,0 +1,7 @@
+<div class="detailPage-container">
+    <a class="detailPage__return" [routerLink]="['']">
+        <app-arrow [turned]="true"></app-arrow>
+        <span>Вернуться</span>
+    </a>
+    <app-repository-card [repo]="repositoryService.getRepo()"></app-repository-card>    
+</div>

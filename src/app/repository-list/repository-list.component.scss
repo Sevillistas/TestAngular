@@ -1,0 +1,7 @@
+:host::ng-deep .listItem { margin-bottom: 40px; }
+
+:host::ng-deep>*:last-child>.listItem { margin-bottom: 0px; }
+
+.error{
+    margin-top: 32px;
+}

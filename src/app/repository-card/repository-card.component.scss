@@ -1,0 +1,55 @@
+.card{
+
+    max-width: 700px;
+
+    &__header{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 33px;
+        color: rgba(0, 0, 0, 0.87);
+        margin-bottom: 53px;
+    }
+    &__item{
+        display: flex;
+        &-vertical{
+            flex-direction: column;
+            margin-top: 10px;
+            >.card__label{
+                margin-bottom: 22px;
+            }
+            >.card__text{
+                line-height: 32px;
+            }
+        }
+    }
+    &__label, &__text{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    &__text{
+        color: #2962FF;
+        flex: 3;
+        width: 100%;
+        word-break: break-all;
+    }
+    &__label{
+        color: rgba(0, 0, 0, 0.87);
+        width: 130px;
+    }
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        row-gap: 40px;
+        column-gap: 20px;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: #2962FF;
+}
